@@ -5,7 +5,7 @@ This repository is a **personal fork** of the upstream Hermes agent.
 ## Origin / Upstream
 
 - **Upstream:** `https://github.com/NousResearch/hermes-agent` (remote `upstream`)
-- **This fork:** `https://github.com/bhovig/hermes-agent` (remote `origin`)
+- **This fork:** `https://github.com/corealpine-dev/hermes-agent` (remote `origin`)
 - The code is originally developed and maintained by Nous Research. Credit and licensing belong to them (see `LICENSE`).
 
 ## Purpose of This Fork
