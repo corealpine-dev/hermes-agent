@@ -10,7 +10,7 @@ This repository is a **personal fork** of the upstream Hermes agent.
 
 ## Purpose of This Fork
 
-A private mirror/working copy used for local development and experimentation. It carries **no product or feature changes** of its own beyond a small set of housekeeping commits (removing oversized committed infographics that violate gitignore policy, and a `package-lock.json` version bump).
+A private mirror/working copy used for local development and experimentation. It carries **no product or feature changes** of its own. Fork-only housekeeping is limited to contributor-email mappings and substituting standard GitHub-hosted runners for upstream premium runner labels that are unavailable in this organization.
 
 ## Sync Policy
 
