@@ -7,13 +7,9 @@ on:
 jobs:
   check:
     name: JS & TS checks
-    # One 32-core job replaces a 14-leg matrix. The matrix spread about 612s
-    # of check payload over 4-core runners. It paid about 371s of repeated
-    # setup to do it: 14 checkouts, 14 node installs, 14 node_modules
-    # restores.
-    #
-    # One larger runner installs one time. vitest, tsc and eslint each size
-    # their own worker pool from the core count.
+    # One standard hosted job avoids the repeated setup of a 14-leg matrix.
+    # Each check also has its own internal worker pool, so run only two checks
+    # together to avoid CPU contention and timing-sensitive test flakes.
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
@@ -80,4 +76,4 @@ jobs:
       # not an empty run, because an empty run reports green after it checks
       # nothing.
       - name: Run all workspace checks
-        run: node .github/scripts/run-workspace-checks.mjs
+        run: node .github/scripts/run-workspace-checks.mjs --concurrency 2
