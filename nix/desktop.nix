@@ -73,6 +73,12 @@ let
 
     doCheck = true;
 
+    # Electron 42 removed ELECTRON_SKIP_BINARY_DOWNLOAD and moved its download
+    # to the npm binary's first invocation. This build never invokes that binary:
+    # it uses nixpkgs' Electron and rebuilds node-pty below. Ignore lifecycle
+    # scripts for the filtered desktop dependency installation as well.
+    npmInstallFlags = [ "--ignore-scripts" ];
+
     buildPhase = ''
       runHook preBuild
 

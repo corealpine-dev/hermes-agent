@@ -260,7 +260,6 @@ let
         src = mkNpmSrc dirs;
         npmConfigHook = patchedNpmConfigHook;
         npmRoot = ".";
-        ELECTRON_SKIP_BINARY_DOWNLOAD = 1;
         passthru = {
           packageJsonPath = "${folder}/package.json";
         };
